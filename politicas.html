@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Privacidad — Stranger Gills | CuacLabs</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0e14;
+    --surface: #111720;
+    --border: #1e2a38;
+    --accent: #3de8c0;
+    --accent2: #5b8cff;
+    --text: #d4e4f0;
+    --muted: #5a7080;
+    --heading: #ffffff;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 1.75;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* background blobs */
+  body::before, body::after {
+    content: '';
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(120px);
+    pointer-events: none;
+    z-index: 0;
+  }
+  body::before {
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(61,232,192,0.07) 0%, transparent 70%);
+    top: -100px; left: -100px;
+  }
+  body::after {
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(91,140,255,0.07) 0%, transparent 70%);
+    bottom: 0; right: -80px;
+  }
+
+  .page {
+    position: relative;
+    z-index: 1;
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 3.5rem 1.5rem 5rem;
+  }
+
+  /* header */
+  .site-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 3.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .logo-mark {
+    width: 36px; height: 36px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+  }
+
+  .logo-text {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--heading);
+    letter-spacing: 0.02em;
+  }
+
+  .logo-sub {
+    font-size: 0.72rem;
+    color: var(--muted);
+    font-weight: 300;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* hero */
+  .doc-hero {
+    margin-bottom: 3rem;
+  }
+
+  .doc-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid rgba(61,232,192,0.3);
+    border-radius: 4px;
+    padding: 0.2em 0.7em;
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    font-weight: 800;
+    color: var(--heading);
+    line-height: 1.1;
+    margin-bottom: 0.75rem;
+  }
+
+  h1 span {
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .doc-meta {
+    font-size: 0.82rem;
+    color: var(--muted);
+    letter-spacing: 0.03em;
+  }
+
+  /* content */
+  .section {
+    margin-bottom: 2.5rem;
+    padding: 1.75rem 1.75rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: linear-gradient(180deg, var(--accent), var(--accent2));
+    border-radius: 3px 0 0 3px;
+  }
+
+  h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--heading);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 0.9rem;
+  }
+
+  p { margin-bottom: 0.9rem; color: var(--text); font-size: 0.95rem; }
+  p:last-child { margin-bottom: 0; }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .highlight-box {
+    background: rgba(61,232,192,0.06);
+    border: 1px solid rgba(61,232,192,0.2);
+    border-radius: 8px;
+    padding: 1rem 1.1rem;
+    margin-top: 0.9rem;
+    font-size: 0.88rem;
+    color: var(--accent);
+    display: flex;
+    gap: 0.6rem;
+    align-items: flex-start;
+  }
+
+  .highlight-box .icon { flex-shrink: 0; font-size: 1rem; margin-top: 0.05rem; }
+
+  /* footer */
+  .doc-footer {
+    margin-top: 3.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.78rem;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  @media (max-width: 480px) {
+    .page { padding: 2rem 1.1rem 4rem; }
+    .section { padding: 1.3rem 1.2rem; }
+    .doc-footer { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="site-header">
+    <div class="logo-mark">🐟</div>
+    <div>
+      <div class="logo-text">Stranger Gills</div>
+      <div class="logo-sub">CuacLabs</div>
+    </div>
+  </header>
+
+  <div class="doc-hero">
+    <span class="doc-tag">Documento legal</span>
+    <h1>Política de <span>Privacidad</span></h1>
+    <p class="doc-meta">Última actualización: mayo 2026 &nbsp;·&nbsp; CuacLabs</p>
+  </div>
+
+  <div class="section">
+    <h2>Introducción</h2>
+    <p>
+      Esta Política de Privacidad describe cómo <strong>CuacLabs</strong> maneja la información en relación con el juego <strong>Stranger Gills</strong>, disponible en Google Play. Nos tomamos tu privacidad en serio y queremos ser transparentes sobre qué datos se procesan y por qué.
+    </p>
+    <p>
+      Al descargar o usar Stranger Gills, aceptas los términos descritos en este documento. Si tienes preguntas, puedes contactarnos en cualquier momento.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Datos que CuacLabs no recopila</h2>
+    <p>
+      Stranger Gills es un juego completamente <strong>offline</strong>. CuacLabs no recopila, almacena ni procesa ningún dato personal de los jugadores. No existen cuentas de usuario, formularios de registro, inicios de sesión ni ningún mecanismo que transmita tu información a nuestros servidores — simplemente porque no tenemos servidores que almacenen datos de usuarios.
+    </p>
+    <div class="highlight-box">
+      <span class="icon">✓</span>
+      <span>Sin nombre · Sin email · Sin ubicación · Sin historial de juego en servidores propios.</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Publicidad y redes de terceros</h2>
+    <p>
+      Por defecto, Stranger Gills muestra anuncios a través de redes publicitarias de terceros. Estas redes pueden recopilar cierta información de tu dispositivo de manera automática, como un identificador de publicidad anónimo, el modelo de tu dispositivo y datos sobre la interacción con los anuncios. Esto les permite mostrar publicidad relevante.
+    </p>
+    <p>
+      Esta recopilación de datos es realizada directamente por la red publicitaria, no por CuacLabs. Te recomendamos revisar la política de privacidad de dichos proveedores:
+    </p>
+    <p>
+      · <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de privacidad de Google (AdMob)</a>
+    </p>
+    <p>
+      Puedes optar por no recibir anuncios personalizados en cualquier momento desde la configuración de tu dispositivo Android: <em>Ajustes → Google → Anuncios → Inhabilitar la personalización de anuncios</em>.
+    </p>
+    <div class="highlight-box">
+      <span class="icon">ℹ️</span>
+      <span>Si adquieres la versión sin anuncios, los anuncios se eliminan completamente y las redes publicitarias dejan de estar activas en el juego.</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Compras dentro de la aplicación</h2>
+    <p>
+      Stranger Gills ofrece una compra opcional dentro de la aplicación para eliminar permanentemente todos los anuncios. Se trata de un pago único, no una suscripción.
+    </p>
+    <p>
+      El procesamiento del pago es gestionado exclusivamente por <strong>Google Play</strong>. CuacLabs no tiene acceso a tu información de pago, datos de tarjeta ni ningún otro dato financiero. Todo el proceso de facturación ocurre dentro de la infraestructura segura de Google.
+    </p>
+    <p>
+      Para dudas sobre reembolsos o facturación, puedes consultar directamente el soporte de Google Play:
+    </p>
+    <p>
+      · <a href="https://support.google.com/googleplay/answer/2479637" target="_blank" rel="noopener">Política de reembolsos de Google Play</a>
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Datos de Google Play</h2>
+    <p>
+      Al descargar Stranger Gills desde Google Play, Google puede recopilar información relacionada con la descarga e instalación de acuerdo con sus propias políticas. CuacLabs solo tiene acceso a estadísticas anónimas y agregadas (como número de instalaciones o valoraciones) que proporciona la consola de Google Play, sin identificadores personales.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Menores de edad</h2>
+    <p>
+      Stranger Gills no está dirigido específicamente a menores de 13 años. CuacLabs no recopila deliberadamente información de menores de edad. Si eres padre o tutor y tienes dudas, puedes contactarnos.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Cambios a esta política</h2>
+    <p>
+      CuacLabs se reserva el derecho de actualizar esta Política de Privacidad. Cualquier cambio será publicado en esta página con una nueva fecha de actualización. Te recomendamos revisarla periódicamente.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Contacto</h2>
+    <p>
+      Si tienes preguntas, comentarios o inquietudes sobre esta política, puedes escribirnos a:
+    </p>
+    <p>
+      <a href="mailto:chawasdev@gmail.com">chawasdev@gmail.com</a>
+    </p>
+  </div>
+
+  <footer class="doc-footer">
+    <span>© 2026 CuacLabs · Stranger Gills</span>
+    <span>Política de Privacidad</span>
+  </footer>
+
+</div>
+</body>
+</html>

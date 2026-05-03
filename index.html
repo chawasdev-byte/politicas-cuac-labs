@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Política de Privacidad — Stranger Gills | CuacLabs</title>
+<title>Privacy Policy — Stranger Gills | CuacLabs</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -18,7 +18,6 @@
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
 
   body {
@@ -31,7 +30,6 @@
     overflow-x: hidden;
   }
 
-  /* background blobs */
   body::before, body::after {
     content: '';
     position: fixed;
@@ -63,10 +61,17 @@
   .site-header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 0.75rem;
     margin-bottom: 3.5rem;
     padding-bottom: 1.5rem;
     border-bottom: 1px solid var(--border);
+  }
+
+  .logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
   }
 
   .logo-mark {
@@ -93,10 +98,42 @@
     text-transform: uppercase;
   }
 
-  /* hero */
-  .doc-hero {
-    margin-bottom: 3rem;
+  /* lang toggle */
+  .lang-toggle {
+    display: flex;
+    align-items: center;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+    padding: 3px;
+    gap: 2px;
   }
+
+  .lang-btn {
+    padding: 0.3em 0.9em;
+    font-family: 'Syne', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    transition: color 0.2s, background 0.2s;
+    border-radius: 5px;
+  }
+
+  .lang-btn.active {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    color: #0a0e14;
+  }
+
+  .lang-btn:not(.active):hover { color: var(--text); }
+
+  /* hero */
+  .doc-hero { margin-bottom: 3rem; }
 
   .doc-tag {
     display: inline-block;
@@ -133,10 +170,10 @@
     letter-spacing: 0.03em;
   }
 
-  /* content */
+  /* sections */
   .section {
     margin-bottom: 2.5rem;
-    padding: 1.75rem 1.75rem;
+    padding: 1.75rem;
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 14px;
@@ -197,6 +234,15 @@
     gap: 0.5rem;
   }
 
+  /* lang visibility */
+  .lang-content { display: none; animation: fadeIn 0.25s ease; }
+  .lang-content.visible { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
   @media (max-width: 480px) {
     .page { padding: 2rem 1.1rem 4rem; }
     .section { padding: 1.3rem 1.2rem; }
@@ -208,112 +254,178 @@
 <div class="page">
 
   <header class="site-header">
-    <div class="logo-mark">🐟</div>
-    <div>
-      <div class="logo-text">Stranger Gills</div>
-      <div class="logo-sub">CuacLabs</div>
+    <div class="logo-wrap">
+      <div class="logo-mark">🐟</div>
+      <div>
+        <div class="logo-text">Stranger Gills</div>
+        <div class="logo-sub">CuacLabs</div>
+      </div>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" id="btn-es" onclick="setLang('es')">ES</button>
     </div>
   </header>
 
-  <div class="doc-hero">
-    <span class="doc-tag">Documento legal</span>
-    <h1>Política de <span>Privacidad</span></h1>
-    <p class="doc-meta">Última actualización: mayo 2026 &nbsp;·&nbsp; CuacLabs</p>
-  </div>
+  <!-- ══════════ ENGLISH ══════════ -->
+  <div class="lang-content visible" data-lang="en">
 
-  <div class="section">
-    <h2>Introducción</h2>
-    <p>
-      Esta Política de Privacidad describe cómo <strong>CuacLabs</strong> maneja la información en relación con el juego <strong>Stranger Gills</strong>, disponible en Google Play. Nos tomamos tu privacidad en serio y queremos ser transparentes sobre qué datos se procesan y por qué.
-    </p>
-    <p>
-      Al descargar o usar Stranger Gills, aceptas los términos descritos en este documento. Si tienes preguntas, puedes contactarnos en cualquier momento.
-    </p>
-  </div>
-
-  <div class="section">
-    <h2>Datos que CuacLabs no recopila</h2>
-    <p>
-      Stranger Gills es un juego completamente <strong>offline</strong>. CuacLabs no recopila, almacena ni procesa ningún dato personal de los jugadores. No existen cuentas de usuario, formularios de registro, inicios de sesión ni ningún mecanismo que transmita tu información a nuestros servidores — simplemente porque no tenemos servidores que almacenen datos de usuarios.
-    </p>
-    <div class="highlight-box">
-      <span class="icon">✓</span>
-      <span>Sin nombre · Sin email · Sin ubicación · Sin historial de juego en servidores propios.</span>
+    <div class="doc-hero">
+      <span class="doc-tag">Legal document</span>
+      <h1>Privacy <span>Policy</span></h1>
+      <p class="doc-meta">Last updated: May 2025 &nbsp;·&nbsp; CuacLabs</p>
     </div>
-  </div>
 
-  <div class="section">
-    <h2>Publicidad y redes de terceros</h2>
-    <p>
-      Por defecto, Stranger Gills muestra anuncios a través de redes publicitarias de terceros. Estas redes pueden recopilar cierta información de tu dispositivo de manera automática, como un identificador de publicidad anónimo, el modelo de tu dispositivo y datos sobre la interacción con los anuncios. Esto les permite mostrar publicidad relevante.
-    </p>
-    <p>
-      Esta recopilación de datos es realizada directamente por la red publicitaria, no por CuacLabs. Te recomendamos revisar la política de privacidad de dichos proveedores:
-    </p>
-    <p>
-      · <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de privacidad de Google (AdMob)</a>
-    </p>
-    <p>
-      Puedes optar por no recibir anuncios personalizados en cualquier momento desde la configuración de tu dispositivo Android: <em>Ajustes → Google → Anuncios → Inhabilitar la personalización de anuncios</em>.
-    </p>
-    <div class="highlight-box">
-      <span class="icon">ℹ️</span>
-      <span>Si adquieres la versión sin anuncios, los anuncios se eliminan completamente y las redes publicitarias dejan de estar activas en el juego.</span>
+    <div class="section">
+      <h2>Introduction</h2>
+      <p>This Privacy Policy describes how <strong>CuacLabs</strong> handles information in connection with the game <strong>Stranger Gills</strong>, available on Google Play. We take your privacy seriously and want to be transparent about what data is processed and why.</p>
+      <p>By downloading or using Stranger Gills, you agree to the terms described in this document. If you have any questions, feel free to contact us at any time.</p>
     </div>
+
+    <div class="section">
+      <h2>Data CuacLabs does not collect</h2>
+      <p>Stranger Gills is a fully <strong>offline</strong> game. CuacLabs does not collect, store, or process any personal data from players. There are no user accounts, registration forms, logins, or any mechanism that transmits your information to our servers — simply because we have no servers that store user data.</p>
+      <div class="highlight-box">
+        <span class="icon">✓</span>
+        <span>No name · No email · No location · No gameplay history on our own servers.</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Advertising & third-party networks</h2>
+      <p>By default, Stranger Gills displays ads through third-party advertising networks. These networks may automatically collect certain information from your device, such as an anonymous advertising identifier, your device model, and data about ad interactions. This allows them to show relevant ads.</p>
+      <p>This data collection is carried out directly by the ad network, not by CuacLabs. We recommend reviewing the privacy policies of these providers:</p>
+      <p>· <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy (AdMob)</a></p>
+      <p>You can opt out of personalized ads at any time from your Android device settings: <em>Settings → Google → Ads → Opt out of Ads Personalization</em>.</p>
+      <div class="highlight-box">
+        <span class="icon">ℹ️</span>
+        <span>If you purchase the ad-free version, ads are completely removed and ad networks are no longer active in the game.</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>In-app purchases</h2>
+      <p>Stranger Gills offers an optional in-app purchase to permanently remove all ads. This is a one-time payment, not a subscription.</p>
+      <p>Payment processing is handled exclusively by <strong>Google Play</strong>. CuacLabs has no access to your payment information, card data, or any other financial details. The entire billing process takes place within Google's secure infrastructure.</p>
+      <p>For questions about refunds or billing, please contact Google Play support directly:</p>
+      <p>· <a href="https://support.google.com/googleplay/answer/2479637" target="_blank" rel="noopener">Google Play Refund Policy</a></p>
+    </div>
+
+    <div class="section">
+      <h2>Google Play data</h2>
+      <p>When you download Stranger Gills from Google Play, Google may collect information related to the download and installation according to its own policies. CuacLabs only has access to anonymous, aggregated statistics (such as number of installs or ratings) provided by the Google Play Console, without any personal identifiers.</p>
+    </div>
+
+    <div class="section">
+      <h2>Children</h2>
+      <p>Stranger Gills is not specifically directed at children under 13. CuacLabs does not knowingly collect information from minors. If you are a parent or guardian and have any concerns, please contact us.</p>
+    </div>
+
+    <div class="section">
+      <h2>Changes to this policy</h2>
+      <p>CuacLabs reserves the right to update this Privacy Policy at any time. Any changes will be posted on this page with a new update date. We recommend reviewing it periodically.</p>
+    </div>
+
+    <div class="section">
+      <h2>Contact</h2>
+      <p>If you have questions, comments, or concerns about this policy, you can reach us at:</p>
+      <p>📧 <a href="mailto:cuaclabs@gmail.com">cuaclabs@gmail.com</a></p>
+    </div>
+
+    <footer class="doc-footer">
+      <span>© 2025 CuacLabs · Stranger Gills</span>
+      <span>Privacy Policy</span>
+    </footer>
+
   </div>
 
-  <div class="section">
-    <h2>Compras dentro de la aplicación</h2>
-    <p>
-      Stranger Gills ofrece una compra opcional dentro de la aplicación para eliminar permanentemente todos los anuncios. Se trata de un pago único, no una suscripción.
-    </p>
-    <p>
-      El procesamiento del pago es gestionado exclusivamente por <strong>Google Play</strong>. CuacLabs no tiene acceso a tu información de pago, datos de tarjeta ni ningún otro dato financiero. Todo el proceso de facturación ocurre dentro de la infraestructura segura de Google.
-    </p>
-    <p>
-      Para dudas sobre reembolsos o facturación, puedes consultar directamente el soporte de Google Play:
-    </p>
-    <p>
-      · <a href="https://support.google.com/googleplay/answer/2479637" target="_blank" rel="noopener">Política de reembolsos de Google Play</a>
-    </p>
-  </div>
+  <!-- ══════════ ESPAÑOL ══════════ -->
+  <div class="lang-content" data-lang="es">
 
-  <div class="section">
-    <h2>Datos de Google Play</h2>
-    <p>
-      Al descargar Stranger Gills desde Google Play, Google puede recopilar información relacionada con la descarga e instalación de acuerdo con sus propias políticas. CuacLabs solo tiene acceso a estadísticas anónimas y agregadas (como número de instalaciones o valoraciones) que proporciona la consola de Google Play, sin identificadores personales.
-    </p>
-  </div>
+    <div class="doc-hero">
+      <span class="doc-tag">Documento legal</span>
+      <h1>Política de <span>Privacidad</span></h1>
+      <p class="doc-meta">Última actualización: mayo 2025 &nbsp;·&nbsp; CuacLabs</p>
+    </div>
 
-  <div class="section">
-    <h2>Menores de edad</h2>
-    <p>
-      Stranger Gills no está dirigido específicamente a menores de 13 años. CuacLabs no recopila deliberadamente información de menores de edad. Si eres padre o tutor y tienes dudas, puedes contactarnos.
-    </p>
-  </div>
+    <div class="section">
+      <h2>Introducción</h2>
+      <p>Esta Política de Privacidad describe cómo <strong>CuacLabs</strong> maneja la información en relación con el juego <strong>Stranger Gills</strong>, disponible en Google Play. Nos tomamos tu privacidad en serio y queremos ser transparentes sobre qué datos se procesan y por qué.</p>
+      <p>Al descargar o usar Stranger Gills, aceptas los términos descritos en este documento. Si tienes preguntas, puedes contactarnos en cualquier momento.</p>
+    </div>
 
-  <div class="section">
-    <h2>Cambios a esta política</h2>
-    <p>
-      CuacLabs se reserva el derecho de actualizar esta Política de Privacidad. Cualquier cambio será publicado en esta página con una nueva fecha de actualización. Te recomendamos revisarla periódicamente.
-    </p>
-  </div>
+    <div class="section">
+      <h2>Datos que CuacLabs no recopila</h2>
+      <p>Stranger Gills es un juego completamente <strong>offline</strong>. CuacLabs no recopila, almacena ni procesa ningún dato personal de los jugadores. No existen cuentas de usuario, formularios de registro, inicios de sesión ni ningún mecanismo que transmita tu información a nuestros servidores — simplemente porque no tenemos servidores que almacenen datos de usuarios.</p>
+      <div class="highlight-box">
+        <span class="icon">✓</span>
+        <span>Sin nombre · Sin email · Sin ubicación · Sin historial de juego en servidores propios.</span>
+      </div>
+    </div>
 
-  <div class="section">
-    <h2>Contacto</h2>
-    <p>
-      Si tienes preguntas, comentarios o inquietudes sobre esta política, puedes escribirnos a:
-    </p>
-    <p>
-      <a href="mailto:chawasdev@gmail.com">chawasdev@gmail.com</a>
-    </p>
-  </div>
+    <div class="section">
+      <h2>Publicidad y redes de terceros</h2>
+      <p>Por defecto, Stranger Gills muestra anuncios a través de redes publicitarias de terceros. Estas redes pueden recopilar cierta información de tu dispositivo de manera automática, como un identificador de publicidad anónimo, el modelo de tu dispositivo y datos sobre la interacción con los anuncios. Esto les permite mostrar publicidad relevante.</p>
+      <p>Esta recopilación de datos es realizada directamente por la red publicitaria, no por CuacLabs. Te recomendamos revisar la política de privacidad de dichos proveedores:</p>
+      <p>· <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de privacidad de Google (AdMob)</a></p>
+      <p>Puedes optar por no recibir anuncios personalizados en cualquier momento desde la configuración de tu dispositivo Android: <em>Ajustes → Google → Anuncios → Inhabilitar la personalización de anuncios</em>.</p>
+      <div class="highlight-box">
+        <span class="icon">ℹ️</span>
+        <span>Si adquieres la versión sin anuncios, los anuncios se eliminan completamente y las redes publicitarias dejan de estar activas en el juego.</span>
+      </div>
+    </div>
 
-  <footer class="doc-footer">
-    <span>© 2026 CuacLabs · Stranger Gills</span>
-    <span>Política de Privacidad</span>
-  </footer>
+    <div class="section">
+      <h2>Compras dentro de la aplicación</h2>
+      <p>Stranger Gills ofrece una compra opcional dentro de la aplicación para eliminar permanentemente todos los anuncios. Se trata de un pago único, no una suscripción.</p>
+      <p>El procesamiento del pago es gestionado exclusivamente por <strong>Google Play</strong>. CuacLabs no tiene acceso a tu información de pago, datos de tarjeta ni ningún otro dato financiero. Todo el proceso de facturación ocurre dentro de la infraestructura segura de Google.</p>
+      <p>Para dudas sobre reembolsos o facturación, puedes consultar directamente el soporte de Google Play:</p>
+      <p>· <a href="https://support.google.com/googleplay/answer/2479637" target="_blank" rel="noopener">Política de reembolsos de Google Play</a></p>
+    </div>
+
+    <div class="section">
+      <h2>Datos de Google Play</h2>
+      <p>Al descargar Stranger Gills desde Google Play, Google puede recopilar información relacionada con la descarga e instalación de acuerdo con sus propias políticas. CuacLabs solo tiene acceso a estadísticas anónimas y agregadas (como número de instalaciones o valoraciones) que proporciona la consola de Google Play, sin identificadores personales.</p>
+    </div>
+
+    <div class="section">
+      <h2>Menores de edad</h2>
+      <p>Stranger Gills no está dirigido específicamente a menores de 13 años. CuacLabs no recopila deliberadamente información de menores de edad. Si eres padre o tutor y tienes dudas, puedes contactarnos.</p>
+    </div>
+
+    <div class="section">
+      <h2>Cambios a esta política</h2>
+      <p>CuacLabs se reserva el derecho de actualizar esta Política de Privacidad. Cualquier cambio será publicado en esta página con una nueva fecha de actualización. Te recomendamos revisarla periódicamente.</p>
+    </div>
+
+    <div class="section">
+      <h2>Contacto</h2>
+      <p>Si tienes preguntas, comentarios o inquietudes sobre esta política, puedes escribirnos a:</p>
+      <p>📧 <a href="mailto:cuaclabs@gmail.com">cuaclabs@gmail.com</a></p>
+    </div>
+
+    <footer class="doc-footer">
+      <span>© 2025 CuacLabs · Stranger Gills</span>
+      <span>Política de Privacidad</span>
+    </footer>
+
+  </div>
 
 </div>
+
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('.lang-content').forEach(el => {
+      el.classList.toggle('visible', el.dataset.lang === lang);
+    });
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+    document.documentElement.lang = lang;
+    document.title = lang === 'en'
+      ? 'Privacy Policy — Stranger Gills | CuacLabs'
+      : 'Política de Privacidad — Stranger Gills | CuacLabs';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
 </body>
 </html>
